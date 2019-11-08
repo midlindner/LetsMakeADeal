@@ -2,15 +2,11 @@ let wins = 0;
 let losses = 0;
 const iterations = 100000000;
 
-const getRandomInt = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+const getRandomInt = () => Math.floor(Math.random() * 3) + 1;
 
 for (let i = 0; i < iterations; i++) {
-  const winningDoor = getRandomInt(1, 3);
-  const selection = getRandomInt(1, 3);
+  const winningDoor = getRandomInt();
+  const selection = getRandomInt();
   let losingDoor = 0;
   let newSelection = 0;
 // Find the first losing door that wasn't selected
